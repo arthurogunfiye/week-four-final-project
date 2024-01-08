@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
   let keyword = localStorage.getItem("keyword");
 
   if (!keyword) {
-    searchResultEl.innerHTML = `<p>You did not enter a Bible reference. No search results.</p>
+    searchResultEl.innerHTML = `<p>You did not enter a Bible reference.</p> <p>No search results.</p>
     <p>Search for a Bible reference above 👆</p>
     `;
     errorMsgEl.innerHTML = "";

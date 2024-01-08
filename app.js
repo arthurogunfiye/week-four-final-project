@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function (event) {
     searchBtn.classList.add("loading");
     searchBtn.innerHTML = swapSvg();
     setTimeout(() => {
-      window.location.href = `${window.location.origin}/bibles.html`;
+      window.location.href = "./bibles.html";
     }, 1500);
   }
 
