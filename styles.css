@@ -384,6 +384,7 @@ button.loading[data-v-2a11e7ca]:active {
   }
 }
 
+.bibleApiLink,
 .bibleApiLink:visited {
   color: #6030b1;
 }
