@@ -369,8 +369,8 @@ button.loading[data-v-2a11e7ca]:active {
 }
 
 .fa-spinner {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   animation: rotate 1s infinite linear;
 }
 
