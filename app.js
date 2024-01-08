@@ -13,11 +13,11 @@ window.addEventListener("DOMContentLoaded", function (event) {
     searchBtn.classList.remove("not-loading");
     searchBtn.classList.add("loading");
     searchBtn.innerHTML = swapSvg();
+    let hostName = window.location.hostname;
+    if (hostName === "localhost" || hostName === "127.0.0.1") {
+      window.location.href = `${window.location.origin}/bibles.html`;
+    }
     setTimeout(() => {
-      let hostName = window.location.hostname;
-      if (hostName === "localhost" || hostName.includes("127.0.0.1")) {
-        window.location.href = `${window.location.origin}/bibles.html`;
-      }
       window.location.href = `${window.location.origin}/week-four-final-project/bibles.html`;
     }, 1500);
   }

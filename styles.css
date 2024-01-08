@@ -215,6 +215,10 @@ header {
  HOME PAGE LANDING SECTION
 */
 
+#landing {
+  background-color: rgb(244, 242, 240);
+}
+
 #nav {
   height: 80px;
   padding: 0 50px;
@@ -243,7 +247,7 @@ header {
   border: 2px #5d3eff;
   border-radius: 50px;
   background-color: #6030b1;
-  color: #fff !important;
+  color: #fff;
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -253,11 +257,16 @@ header {
 
 .nav__link--primary-homePage:hover {
   background-color: #5d3eff;
-  color: #fff !important;
+  color: #fff;
 }
 
-.nav__link--homePage-active {
-  color: #6030b1 !important;
+.nav__link--primary-homePage,
+.nav__link--primary {
+  cursor: no-drop;
+}
+
+.nav__link--homePage {
+  color: #6030b1;
 }
 
 .landingSection__description--title {
@@ -375,12 +384,8 @@ button.loading[data-v-2a11e7ca]:active {
   }
 }
 
-.building--img {
-  max-width: max-content;
-  bottom: 0;
-  height: 50vh;
-  position: absolute;
-  display: none;
+.bibleApiLink:visited {
+  color: #6030b1;
 }
 
 .searchErrorMessage {
@@ -445,4 +450,65 @@ p {
   border-radius: 50%;
   font-weight: 700;
   color: blue;
+}
+
+/* 
+ HOME PAGE FEATURED BIBLES SECTION
+*/
+
+#featured {
+  background-color: rgba(115, 66, 214, 0.1);
+}
+
+.bibles {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.bible {
+  width: 25%;
+  padding: 24px;
+}
+.bible__img--wrapper {
+  margin-bottom: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+
+.bible-img {
+  max-height: 380px;
+  transition: all 300ms ease;
+  cursor: not-allowed;
+  object-fit: contain;
+  object-position: center;
+}
+
+.bible:hover .bible-img {
+  transform: scale(1.03);
+}
+
+.bible-title {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.featured__description--wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.featured__title {
+  font-size: 30px;
+  color: #6030b1;
+  font-weight: 700;
+}
+
+.featured__sub-title {
+  margin: 1.5rem 0;
+  font-style: italic;
+  font-size: 1.25rem;
+  opacity: 0.7;
 }
