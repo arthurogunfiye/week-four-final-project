@@ -14,6 +14,9 @@ window.addEventListener("DOMContentLoaded", function (event) {
     searchBtn.classList.add("loading");
     searchBtn.innerHTML = swapSvg();
     setTimeout(() => {
+      if (window.location.href.includes("week-four-final-project")) {
+        window.location.href = `${window.location.origin}/${window.location.pathname}/bibles.html`;
+      }
       window.location.href = `${window.location.origin}/bibles.html`;
     }, 1500);
   }
