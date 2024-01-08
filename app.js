@@ -1,6 +1,13 @@
 window.addEventListener("DOMContentLoaded", function (event) {
   const searchInput = document.querySelector("#search__bar");
   const searchBtn = document.querySelector("#search__btn");
+  const findBibleScriptureLink = this.document.querySelector(
+    ".nav__link--homePage:nth-of-type(2)"
+  );
+
+  findBibleScriptureLink.addEventListener("click", function () {
+    localStorage.clear();
+  });
 
   if (searchBtn) searchBtn.addEventListener("click", main);
   searchInput.addEventListener("keydown", function (event) {
