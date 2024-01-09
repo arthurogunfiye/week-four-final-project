@@ -83,6 +83,11 @@ li {
   pointer-events: none;
 }
 
+.bible--reference::before,
+.bible--reference::after {
+  content: "🌟";
+}
+
 #nav-and-header {
   height: 326px;
   background-color: grey;
@@ -535,6 +540,10 @@ p {
   .bible {
     width: calc(100% / 3);
   }
+
+  .backToTop {
+    right: 1rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -552,6 +561,14 @@ p {
     width: 400px;
     height: 400px;
     object-fit: fill;
+  }
+
+  .backToTopAnchor {
+    display: none;
+  }
+
+  .header__title {
+    letter-spacing: 0;
   }
 }
 
@@ -622,11 +639,57 @@ p {
     display: none;
   }
 
-  .purple-logo {
-    margin-left: 4rem;
+  nav {
+    position: relative;
+  }
+
+  .purple-logo,
+  .white-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
   }
 
   .featured__description--wrapper {
     text-align: center;
+  }
+
+  .header__title {
+    display: none;
+  }
+
+  .nav__links {
+    display: none;
+  }
+
+  .search__wrapper {
+    margin-top: 2rem;
+  }
+
+  .bible--reference {
+    font-size: 1.5rem;
+  }
+
+  .bibleVersion {
+    font-size: 1.5rem;
+  }
+
+  .backToTopAnchor {
+    display: none;
+  }
+
+  .searchErrorMessage {
+    align-items: center;
+  }
+
+  .warningMsg,
+  .errorMsg {
+    text-align: center;
+  }
+
+  .versionPrefix {
+    display: none;
   }
 }

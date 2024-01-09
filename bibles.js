@@ -9,9 +9,7 @@ window.addEventListener("DOMContentLoaded", function () {
   let keyword = localStorage.getItem("keyword");
 
   if (!keyword) {
-    searchResultEl.innerHTML = `<p>You did not enter a Bible reference.</p> <p>No search results.</p>
-    <p>Search for a Bible reference above 👆</p>
-    `;
+    searchResultEl.innerHTML = warningMessage();
     errorMsgEl.innerHTML = "";
     this.localStorage.clear();
   } else {
@@ -56,12 +54,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
   function referenceHTML(referenceData) {
     return `
-      <h3 class="bible--reference"><b>🌟 Reference: </b>${referenceData.reference} 🌟</h3>
+      <h3 class="bible--reference"><b> Reference: </b> ${referenceData.reference} </h3>
     `;
   }
 
   function bibleVersionHTML(referenceData) {
-    return `<h3 class="bibleVersion"><b>Bible Version: </b>${referenceData.translation_name}</h3>`;
+    return `<h3 class="bibleVersion"><b class="versionPrefix">Bible Version: </b>${referenceData.translation_name}</h3>`;
   }
 
   function versesHTML(referenceData) {
@@ -70,11 +68,16 @@ window.addEventListener("DOMContentLoaded", function () {
     ${referenceData.verse}</span> - </b>${referenceData.text}</p>`;
   }
 
+  function warningMessage() {
+    return `<p class="warningMsg">You did not enter a Bible reference.</p> <p class="warningMsg">No search results.</p>
+    <p class="warningMsg">Search for a Bible reference above 👆</p>`;
+  }
+
   function errorMsgHTML() {
     return `
-      <p>This Bible reference you entered does not exist ❌</p>
-      <p>You entered: ${searchInputEl.value || keyword}</p>
-      <p> Please search again 👆</p>
+      <p class="errorMsg">This Bible reference you entered does not exist ❌</p>
+      <p class="errorMsg">You entered: ${searchInputEl.value || keyword}</p>
+      <p class="errorMsg"> Please search again 👆</p>
     `;
   }
 
