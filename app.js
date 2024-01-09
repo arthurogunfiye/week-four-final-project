@@ -1,21 +1,40 @@
 window.addEventListener("DOMContentLoaded", function (event) {
-  const searchInput = document.querySelector("#search__bar");
+  const searchInput1 = document.querySelector("#search__bar1");
   const searchBtn = document.querySelector("#search__btn");
   const findBibleScriptureLink = this.document.querySelector(
     ".nav__link--homePage:nth-of-type(2)"
   );
 
+  const homePageSearchIcon = document.querySelector(".second-search-icon");
+  const searchInput2 = document.querySelector("#search__bar2");
+
   findBibleScriptureLink.addEventListener("click", function () {
     localStorage.clear();
   });
 
-  if (searchBtn) searchBtn.addEventListener("click", main);
-  searchInput.addEventListener("keydown", function (event) {
-    if (event.key === "Enter") main();
+  searchBtn.addEventListener("click", main1);
+
+  searchInput1.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") main1();
   });
 
-  function main() {
-    const searchKeyword = searchInput.value;
+  function main1() {
+    const searchKeyword = searchInput1.value;
+    redirectToSearchResultsPage(searchKeyword);
+  }
+
+  homePageSearchIcon.addEventListener("click", main2);
+
+  searchInput2.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") main2();
+  });
+
+  function main2() {
+    const searchKeyword = searchInput2.value;
+    redirectToSearchResultsPage(searchKeyword);
+  }
+
+  function redirectToSearchResultsPage(searchKeyword) {
     localStorage.setItem("keyword", searchKeyword);
     searchBtn.classList.remove("not-loading");
     searchBtn.classList.add("loading");

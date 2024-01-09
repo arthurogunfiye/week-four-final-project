@@ -1,6 +1,6 @@
 window.addEventListener("DOMContentLoaded", function () {
-  const searchInputEl = document.querySelector("#search-bar");
-  const searchIcon = document.querySelector(".search__icon");
+  const searchInputEl = document.querySelector("#searchResultsPage-input");
+  const searchResultsPageSearchIcon = document.querySelector(".search__icon");
   const searchResultEl = document.querySelector(".searchResult--wrapper");
   const errorMsgEl = document.querySelector(".searchErrorMessage");
 
@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", function () {
   searchInputEl.addEventListener("keydown", function (event) {
     if (event.key === "Enter") renderVerses();
   });
-  searchIcon.addEventListener("click", renderVerses);
+  searchResultsPageSearchIcon.addEventListener("click", renderVerses);
 
   async function renderVerses() {
     searchResultEl.classList.remove("loading");

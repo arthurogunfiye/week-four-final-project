@@ -172,7 +172,7 @@ header {
   text-size-adjust: 100%;
 }
 
-#search-bar {
+#searchResultsPage-input {
   color: rgba(0, 0, 0, 0.87);
   width: 100%;
   max-width: 800px;
@@ -269,6 +269,10 @@ header {
   color: #6030b1;
 }
 
+.secondFindScriptureLink {
+  display: none;
+}
+
 .landingSection__description--title {
   font-size: 3.125rem;
   margin-bottom: 30px;
@@ -302,7 +306,7 @@ header {
   justify-content: center;
 }
 
-#search__bar {
+#search__bar1 {
   background-color: #fff;
   border-radius: 20px;
   border: 1px solid #0a1f44;
@@ -318,8 +322,12 @@ header {
   padding-left: 25px;
 }
 
-#search__bar:focus {
+#search__bar1:focus {
   box-shadow: 0 0 0 1px #6030b1;
+}
+
+#search__bar2 {
+  display: none;
 }
 
 button[data-v-2a11e7ca] {
@@ -366,6 +374,10 @@ button.loading[data-v-2a11e7ca]:active {
 .fa-search {
   width: 40px;
   height: 40px;
+}
+
+.second-search-icon {
+  display: none;
 }
 
 .fa-spinner {
@@ -472,8 +484,9 @@ p {
 
 .bible {
   width: 25%;
-  padding: 24px;
+  padding: 1.5rem;
 }
+
 .bible__img--wrapper {
   margin-bottom: 8px;
   border-radius: 4px;
@@ -485,7 +498,7 @@ p {
   max-height: 380px;
   transition: all 300ms ease;
   cursor: not-allowed;
-  object-fit: contain;
+  object-fit: fill;
   object-position: center;
 }
 
@@ -516,4 +529,104 @@ p {
   font-style: italic;
   font-size: 1.25rem;
   opacity: 0.7;
+}
+
+@media (max-width: 1024px) {
+  .bible {
+    width: calc(100% / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .bible {
+    width: 50%;
+  }
+
+  .bible__img--wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 5rem;
+  }
+
+  .bible-img {
+    width: 400px;
+    height: 400px;
+    object-fit: fill;
+  }
+}
+
+@media (max-width: 732px) {
+  .nav__link--homePage:nth-of-type(1),
+  .nav__link--primary-homePage {
+    display: none;
+  }
+
+  .nav__link--homePage:nth-of-type(2) {
+    margin-left: 8rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .landingSection__input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+  }
+
+  #search__bar1 {
+    display: none;
+  }
+
+  #search__bar2 {
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid #0a1f44;
+    color: #0a1f44;
+    display: inline-block;
+    height: 70px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 15px;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 100%;
+    font-size: 24px;
+    padding-left: 25px;
+  }
+
+  #search__bar2:focus {
+    box-shadow: 0 0 0 1px #6030b1;
+  }
+
+  #search__btn {
+    display: none;
+  }
+
+  svg[class~="second-search-icon"] {
+    display: block;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 1rem;
+    color: #6030b1;
+    cursor: pointer;
+  }
+
+  .bible {
+    width: 100%;
+  }
+
+  .nav__link--homePage:nth-of-type(2) {
+    display: none;
+  }
+
+  .purple-logo {
+    margin-left: 4rem;
+  }
+
+  .featured__description--wrapper {
+    text-align: center;
+  }
 }
