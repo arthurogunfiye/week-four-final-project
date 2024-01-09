@@ -692,4 +692,9 @@ p {
   .versionPrefix {
     display: none;
   }
+
+  .bible--reference::before,
+  .bible--reference::after {
+    content: "";
+  }
 }
